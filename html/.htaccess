@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteRule \.git - [F,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L]

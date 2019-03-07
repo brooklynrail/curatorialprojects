@@ -1,0 +1,32 @@
+<div class="row">
+    <h3>Editing Artists</h3>
+</div>
+<hr />
+<div class="row">
+
+    <h4>Artist's Name:</h4>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <input style="width:100%;" ng-model="editor.data.name" />
+    </div>
+    <br /><br />
+    <h4>Artist's Image (drag to place, press +/- keys to change size):</h4>
+    
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    
+        <div class="artist_image_spacer">
+        
+            <div class="artist_image" style="position:relative; margin:100px; width:140px; height:170px;">
+                <img dg-image-position src="{{editor.data.image.webpath}}"
+                     style="position:absolute; width:{{editor.data.image.width || 200}}px; top:{{editor.data.image.top || -10}}px; left:{{editor.data.image.left || -10}}px; cursor:pointer; z-index:1;" />
+                <div style="position:absolute; height:100%; width:100%; border:2px dotted #F00; z-index:100000;"></div>     
+            </div>
+        
+        </div>
+    
+
+    </div>
+    
+    <div class="clearfix"></div>
+    <div class="btn btn-info" ng-click="editor.placeData(editor.data)">Save Data</div>
+
+</div>

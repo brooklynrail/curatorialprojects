@@ -1,0 +1,10 @@
+<div class="margin-bottom-sm" ng-repeat="(index, partner) in data.partners.partners track by $index">
+    <div class="col-md-offset-2 col-sm-offset-2 col-md-2 col-sm-2">
+        <img ng-src="{{partner.file.webpath}}" />
+    </div>
+    <div class="col-md-8">
+        <h4 ng-bind-html="partner.title"></h4> 
+        <p ng-bind-html="partner.text"></p>            
+    </div>
+    <div class="clearfix"></div>
+</div>

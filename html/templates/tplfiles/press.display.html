@@ -1,0 +1,10 @@
+<div ng-repeat="(index, article) in data.press.press"
+     class="col-md-2 col-sm-2 col-xs-4"
+     ng-class="{'col-md-offset-2 col-sm-offset-2' : !($index % 5)}"> 
+    <div class="pressbox">
+        <h4 ng-bind-html="article.publication"></h4>
+        <p>{{article.date}}</p>
+        <p ng-show="article.link"><i class="fa fa-globe"></i> <a target="_press" href="{{article.link}}">Visit Website</a></p>
+        <p ng-show="article.file.webpath"><i class="fa fa-file-pdf-o"></i> <a target="_press" href="{{article.file.webpath}}">View PDF</a></p>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<h4>Banner Slider</h4>
+<div class="nopad col-lg-12 col-md-12 col-sm-12 col-xs-12"
+     ng-repeat="(index, image) in data.banner.images">
+
+    <div class="banner nopad">
+    
+        <div class="btn-group overlaid-buttons" role="toolbar">
+            <button type="button" class="btn btn-default btn-xs" ng-click="moveUp(data.banner.images, index)">
+                <i class="fa fa-caret-square-o-up"></i>
+            </button>
+            <button type="button" class="btn btn-default btn-xs" ng-click="moveDown(data.banner.images, index)">
+                <i class="fa fa-caret-square-o-down"></i>
+            </button>
+            <button type="button" class="btn btn-danger btn-xs" ng-click="removeIndex(data.banner.images, index)">
+                <i class="fa fa-trash"></i>
+            </button>          
+        </div>    
+    
+        <img dg-edit="data.banner.images[{{index}}]" 
+             dg-edit-type="file"
+             class="banner_img"
+             ng-src="{{image.webpath}}" />
+    </div>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div dg-repeat="images" dg-repeat-parent="data.banner"></div>
+</div>
+
+<h4>Banner Lightbox</h4>
+<div class="nopad col-lg-3 col-md-3 col-sm-3 col-xs-3"
+     ng-repeat="(index, full_image) in data.banner.full_images">    
+
+    <div>
+
+        <div class="btn-group overlaid-buttons" role="toolbar">
+            <button type="button" class="btn btn-default btn-xs" ng-click="moveUp(data.banner.full_images, index)">
+                <i class="fa fa-caret-square-o-up"></i>
+            </button>
+            <button type="button" class="btn btn-default btn-xs" ng-click="moveDown(data.banner.full_images, index)">
+                <i class="fa fa-caret-square-o-down"></i>
+            </button>
+            <button type="button" class="btn btn-danger btn-xs" ng-click="removeIndex(data.banner.full_images, index)">
+                <i class="fa fa-trash"></i>
+            </button>          
+        </div>
+
+        <img dg-edit="data.banner.full_images[{{index}}]" 
+             dg-edit-type="file"
+             class="banner_img"
+             ng-src="{{full_image.webpath}}" />
+    </div>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div dg-repeat="full_images" dg-repeat-parent="data.banner"></div>
+</div>
+
+

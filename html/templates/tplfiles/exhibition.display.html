@@ -1,0 +1,17 @@
+<div class="col-md-12 col-xs-12">
+    <h4 ng-bind-html="data.exhibition.subtitle"></h4>
+</div>
+<div class="clearfix"></div>
+
+<div class="col-md-8 col-sm-8 col-xs-12">
+    <p ng-bind-html="data.exhibition.text | sanitize"></p>
+</div>
+
+<div class="col-md-4 col-sm-4 col-xs-12">
+    <div ng-repeat="(index, image) in data.exhibition.images">
+        <div>
+            <img ng-src="{{image.webpath}}" />
+            <div class="caption small" ng-bind-html="image.caption">{{image.caption}}</div>
+        </div>
+    </div>
+</div>

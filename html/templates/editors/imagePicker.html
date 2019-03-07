@@ -1,0 +1,25 @@
+
+
+<div class="row">
+    <i class="fa fa-folder"></i>{{files.folder.title}} {{files.folder.description}}
+    <select ng-options="folder.name as folder.name for (name, folder) in files.folders"     
+            ng-model="files.folder.name"
+            ng-change="files.getFolder(files.folder.name)" />
+</div>
+<hr />
+<div class="row">
+
+    <div ng-repeat="file in files.folder.files track by $index" class="image-picker col-lg-3 col-md-3 col-sm-4">
+        <div class="thumb-img" ng-click="files.placeFile(file)">
+            <img src="{{file.webpath}}" />
+        </div>
+        <div class="caption">
+            <small>
+                {{file.name}}<br />
+                {{file.caption}}
+            </small>
+        </div>
+    </div>
+
+
+</div>

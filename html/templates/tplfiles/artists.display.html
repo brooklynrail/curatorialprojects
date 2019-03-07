@@ -1,0 +1,9 @@
+<div ng-repeat="(index, artist) in data.artists.artists"
+     class="col-md-2 col-sm-2 col-xs-4"
+     ng-class="{'col-md-offset-2 col-sm-offset-2' : !($index % 5)}"> 
+        <div ng-click="openArtistLightbox(data.artists.artists, {{index}})" class="imagebox" style="cursor:pointer;">
+            <div>{{artist.name}}</div>
+            <div class="imagecover"></div>
+            <img style="position:absolute; width:{{artist.image.width}}px; top:{{artist.image.top || -10}}px; left:{{artist.image.left || -10}}px;" ng-src="{{artist.image.webpath}}" />
+        </div>
+</div>

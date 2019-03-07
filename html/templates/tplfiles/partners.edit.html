@@ -1,0 +1,33 @@
+<div class="margin-bottom-sm" ng-repeat="(index, partner) in data.partners.partners track by $index">        
+    <div class="col-md-2 col-sm-2 col-xs-6">
+
+        <a class="btn btn-danger btn-xs pull-left" ng-click="removeIndex(data.partners.partners, index)">
+            <i class="fa fa-trash"></i>
+        </A>
+        
+         <div class="btn-group pull-right" role="toolbar">
+            <button type="button" class="btn btn-default btn-xs" ng-click="moveUp(data.partners.partners, index)">
+                <i class="fa fa-caret-square-o-up"></i>
+            </button>
+            <button type="button" class="btn btn-default btn-xs" ng-click="moveDown(data.partners.partners, index)">
+                <i class="fa fa-caret-square-o-down"></i>
+            </button>
+        </div>
+    
+    </div>
+    <div class="col-md-2 col-sm-2 col-xs-6">
+        
+        <img dg-edit="data.partners.partners[{{index}}].file" 
+             dg-edit-type="file" 
+             ng-src="{{partner.file.webpath}}" />
+    </div>
+    <div class="col-md-8 col-sm-2 col-xs-6">
+        <input class="form-control" ng-model="partner.title" />       
+        <p dg-edit="data.partners.partners[{{index}}].text" 
+           dg-edit-type="textarea" ng-bind-html="partner.text"></p>            
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div dg-repeat="partners" dg-repeat-parent="data.partners"></div>
+</div>

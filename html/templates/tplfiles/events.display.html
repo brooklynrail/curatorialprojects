@@ -1,0 +1,13 @@
+<div class="margin-bottom-sm" ng-repeat="(index, event) in data.events.events">
+    <div class="col-md-offset-2 col-sm-offset-2 col-md-2 col-sm-3">
+        <img ng-show="event.file.webpath" ng-src="{{event.file.webpath}}" />
+    </div>
+    <div class="col-md-2 col-sm-3">
+        <h4 ng-bind-html="event.date"></h4>
+    </div>
+    <div class="col-md-6 col-sm-3">
+        <h4 ng-bind-html="event.title"></h4>
+        <p ng-bind-html="event.text"></p>
+    </div>
+    <div class="clearfix"></div>
+</div>

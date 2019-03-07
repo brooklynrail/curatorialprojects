@@ -1,0 +1,25 @@
+{
+    "name": "brooklynrail/curatorial",
+    "description": "Brooklyn Rail Curatorial Projects Website",
+    "license": "copyright",
+    "authors": [
+        {
+            "name": "Dave M. Giglio",
+            "email": "dave.m.giglio@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0",
+        "monolog/monolog": "1.0.*",
+        "slim/slim": "2.*",
+        "flowjs/flow-php-server": "1.0.0",
+        "miljar/php-exif": "0.2.1",
+        "tuupola/slim-basic-auth": "^1.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Curatorial": "src/"
+        }
+    }
+}

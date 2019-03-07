@@ -1,0 +1,38 @@
+<div class="margin-bottom-sm" ng-repeat="(index, event) in data.events.events">
+    <div class="col-md-2">
+
+        <a class="btn btn-danger btn-xs" ng-click="removeIndex(data.events.events, index)">
+            <i class="fa fa-trash"></i>
+        </a>        
+        
+        <div class="btn-group" role="toolbar">
+            <button type="button" class="btn btn-default btn-xs" ng-click="moveUp(data.events.events, index)">
+                <i class="fa fa-caret-square-o-up"></i>
+            </button>
+            <button type="button" class="btn btn-default btn-xs" ng-click="moveDown(data.events.events, index)">
+                <i class="fa fa-caret-square-o-down"></i>
+            </button>
+        </div>
+        
+    </div>
+    <div class="col-md-2 col-sm-3 col-xs-6">
+        <img dg-edit="data.events.events[{{index}}].file" 
+             dg-edit-type="file" 
+             ng-src="{{event.file.webpath}}" />
+    </div>
+    <div class="col-md-2 col-sm-3 col-xs-6"> 
+         <h4 dg-edit="data.events.events[{{index}}].date" 
+             dg-edit-type="textarea"
+             ng-bind-html="event.date"></h4>
+    </div>
+    <div class="col-md-6 col-sm-3 col-xs-6">
+        <h4 dg-edit="data.events.events[{{index}}].title" 
+            dg-edit-type="text" ng-bind-html="event.title"></h4>
+        <p dg-edit="data.events.events[{{index}}].text" 
+           dg-edit-type="textarea" ng-bind-html="event.text"></p>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div dg-repeat="events" dg-repeat-parent="data.events"></div>
+</div>

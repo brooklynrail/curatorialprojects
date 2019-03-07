@@ -1,0 +1,15 @@
+vendor
+html/content/*
+html/page/*
+admin-passwords.php
+/application/logs
+/html/lib/angular-bootstrap-lightbox
+/html/lib/angular-loading-bar
+/html/lib/angular-ui
+/html/lib/bootstrap
+/html/lib/ng-flow
+/html/lib/textAngular
+/html/lib/ui-router
+/tmp
+/html/pages
+*.bak

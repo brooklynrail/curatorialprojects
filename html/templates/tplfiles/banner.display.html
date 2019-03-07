@@ -1,0 +1,10 @@
+<div class="banner nopad col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <a style="cursor:pointer;">
+        <carousel interval="myInterval">
+            <slide ng-repeat="(index, image) in data.banner.images" active="image.active">
+                <img class="hidden-xs banner_img" ng-src="{{image.webpath}}" style="height:300px;">
+                <img class="hidden-lg hidden-md hidden-sm banner_img" ng-src="{{image.webpath}}">
+            </slide>
+        </carousel>
+    </a>
+</div>

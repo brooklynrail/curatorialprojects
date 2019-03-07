@@ -1,0 +1,59 @@
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-repeat="(index, artist) in data.artists.artists">
+
+        
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1å">
+            <i class="fa fa-pencil"
+               dg-edit="data.artists.artists[{{index}}]" 
+               dg-edit-hover="false"
+               dg-edit-btn="true"
+               dg-edit-type="artist"
+               dg-edit-label="Edit Artist"></i>  
+        </div>
+    
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+
+                <div class="imagebox"
+                     style="cursor:pointer;  border:2px solid gray;">
+                    <img dg-edit="data.artists.artists[{{index}}].image" 
+                         dg-edit-type="file" 
+                         style="position:absolute; width:{{artist.image.width}}px; top:{{artist.image.top || -10}}px; left:{{artist.image.left || -10}}px;  min-height:190px; min-width:150px"
+                         ng-src="{{artist.image.webpath}}" />
+                </div>
+    
+        </div>
+    
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+
+            <input ng-model="artist.name" placeholder="artist name" class="form-control" />
+            
+            <p dg-edit="data.artists.artists[{{index}}].caption" 
+               dg-edit-type="textarea" ng-bind-html="artist.caption"></p>
+                
+        </div>
+
+
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+
+                <div class="btn-group" role="toolbar">
+                    <button type="button" class="btn btn-default btn-sm" ng-click="moveUp(data.artists.artists, index)">
+                        <i class="fa fa-caret-square-o-up"></i>
+                    </button>
+                    <button type="button" class="btn btn-default btn-sm" ng-click="moveDown(data.artists.artists, index)">
+                        <i class="fa fa-caret-square-o-down"></i>
+                    </button>
+                </div>
+                
+                <a class="btn btn-danger btn-sm" ng-click="removeIndex(data.artists.artists, index)">
+                    <i class="fa fa-trash"></i>
+                </a>
+        </div>
+            
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div dg-repeat="artists" dg-repeat-parent="data.artists"></div>
+    </div>
+
+</div>
